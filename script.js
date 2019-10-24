@@ -20,6 +20,7 @@ const canvas32 = {
 
 function getJSON(object) {
     fetch(path)
+    fetch(object.path)
         .then(function (resp) {
             return resp.json();
         })
