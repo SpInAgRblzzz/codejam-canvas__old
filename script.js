@@ -19,7 +19,6 @@ const canvas32 = {
 
 
 function getJSON(object) {
-    fetch(path)
     fetch(object.path)
         .then(function (resp) {
             return resp.json();
@@ -32,3 +31,19 @@ function getJSON(object) {
 
         })
 }
+
+const button4 = document.querySelector('.btn4');
+function fillCanvas (object){
+    getJSON(object);
+    return function(){
+        const scale = 512 / object.content.length;
+        for(let row = 0,len = object.content.length; row < len; row++){
+            for(let col = 0,len=object.content.length;col<len;col++){
+                ctx.fillRect(row*scale, col*scale, scale, scale);
+                ctx.fillStyle('#e00d0d')
+            }
+        }
+    }
+}
+
+button4.addEventListener('click', fillCanvas(canvas4))
