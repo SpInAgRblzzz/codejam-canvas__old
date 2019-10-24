@@ -23,8 +23,7 @@ function getJSON(object) {
         .then(function (resp) {
             return resp.json();
         })
-        .then(function (data) {
-            console.log(data);
+        .then(function (data) {          
             if (object.content === null) {
                 object.content = data;
             }
@@ -39,8 +38,10 @@ function fillCanvas (object){
         const scale = 512 / object.content.length;
         for(let row = 0,len = object.content.length; row < len; row++){
             for(let col = 0,len=object.content.length;col<len;col++){
-                ctx.fillRect(row*scale, col*scale, scale, scale);
-                ctx.fillStyle('#e00d0d')
+                if(object.content.length ===4){
+                    ctx.fillStyle = '#'+object.content[row][col];
+                }
+                ctx.fillRect(row*scale, col*scale, scale, scale);                
             }
         }
     }
