@@ -31,6 +31,9 @@ function getJSON(object) {
 }
 
 const button4 = document.querySelector('.btn4');
+const button32 = document.querySelector('.btn32');
+
+
 function fillCanvas(object) {
     getJSON(object);
     return function () {
@@ -40,10 +43,15 @@ function fillCanvas(object) {
                 if (object.content.length === 4) {
                     ctx.fillStyle = '#' + object.content[row][col];
                 }
+                if (object.content.length === 32) {
+                    ctx.fillStyle = `rgba( ${object.content[row][col]})`;
+                    
+                }
                 ctx.fillRect(row * scale, col * scale, scale, scale);
             }
         }
     }
 }
 
-button4.addEventListener('click', fillCanvas(canvas4))
+button4.addEventListener('click', fillCanvas(canvas4));
+button32.addEventListener('click', fillCanvas(canvas32));
