@@ -39,7 +39,6 @@ function getJSON(object) {
 
 function getImage(object) {
   object.content = new Image();
-  console.log(object.content);
   object.content.src = object.path;
 }
 
@@ -73,7 +72,15 @@ function fillCanvas(object) {
         }
       }
     } else {
-      ctx.drawImage(object.content, 0, 0);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, 512, 512);
+      const imgWidth = object.content.width;
+      const imgHeight = object.content.height;
+      ctx.drawImage(
+        object.content,
+        (512 - imgWidth) / 2,
+        (512 - imgHeight) / 2
+      );
     }
   };
 }
