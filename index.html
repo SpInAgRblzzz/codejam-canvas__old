@@ -8,12 +8,53 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <canvas class="canvas"></canvas>
-    <nav class="canvas-controls">
-      <button class="btn4">4x4</button>
-      <button class="btn32">32x32</button>
-      <button class="png">.png</button>
-    </nav>
+    <header>
+      <h1>canvas_codejam</h1>
+    </header>
+    <main>
+      <aside class="tools">
+        <ul class="transform-tools">
+          <li><button class="transform-btn">Paint bucket</button></li>
+          <li><button class="transform-btn">Choose color</button></li>
+          <li><button class="transform-btn">Move</button></li>
+          <li><button class="transform-btn">Transform</button></li>
+        </ul>
+        <ul class="color-tools">
+          <li>
+            <button class="color-btn">
+              <div class="color"></div>
+              Current color
+            </button>
+          </li>
+          <li>
+            <button class="color-btn">
+              <div class="color"></div>
+              Prev color
+            </button>
+          </li>
+          <li>
+            <button class="color-btn">
+              <div class="color"></div>
+              red
+            </button>
+          </li>
+          <li>
+            <button class="color-btn">
+              <div class="color"></div>
+              blue
+            </button>
+          </li>
+        </ul>
+      </aside>
+      <div class="canvas-content">
+        <canvas class="canvas"></canvas>
+        <nav class="canvas-controls">
+          <button class="btn4">4x4</button>
+          <button class="btn32">32x32</button>
+          <button class="png">.png</button>
+        </nav>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
